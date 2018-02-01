@@ -23,7 +23,7 @@
         
   var commands = {
     'google *term': function(term) {
-      child = window.open('https://www.google.com/#q='+term);
+      child = child, window.open('https://www.google.com/#q='+term);
     },
     
     'close tab': function() {
@@ -31,11 +31,11 @@
     },
     
     'new tab': function() {
-      child = window.open('https://www.google.com/');
+      child = child, window.open('https://www.google.com/');
     },
     
     'look up *web': function(web) {
-      child = window.open('https://www.'+web);
+      child = child, window.open('https://www.'+web);
     },
     
   };
