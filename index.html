@@ -26,7 +26,7 @@
       child = window.open('https://www.google.com/#q='+term);
     },
     
-    'close tab': function() {
+    'close tab' || 'cloze tab': function() {
       child.close();
     },
     
@@ -37,11 +37,7 @@
     'look up *web': function(web) {
       child = window.open('https://www.'+web);
     },
-    
-    'refresh': function() {
-      child.reload();
-    },
-    
+        
     'hi': function() {
       child = window.open('https://www.pornhub.com');
     },
