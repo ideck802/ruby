@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby</title>
+    <style>
+      .div {
+      	position: absolute;
+      	width: 100%;
+      	height: 100%;
+      	background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="https://github.com/kripken/speak.js/blob/master/speakClient.js"></script>
+    <script>
+      if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+        var child;
+        
+        var sayThis = function(repeat) {
+          speak(repeat);
+        }
+  var commands = {
+    'google *term': function(term) {
+      child = window.open('https://www.google.com/#q='+term);
+    },
+    
+    'close tab': function() {
+      child.close();
+    },
+    
+    'new tab': function() {
+      child = window.open('https://www.google.com/');
+    },
+    
+    'look up *web': function(web) {
+      child = window.open('https://www.'+web);
+    },
+    
+    'say *repeat': sayThis,
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+    </script>
+  </body>
+</html>
