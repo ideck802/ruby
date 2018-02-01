@@ -16,15 +16,10 @@
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
-    <script src="https://github.com/kripken/speak.js/blob/master/speakClient.js"></script>
     <script>
       if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
         var child;
-        
-        var sayThis = function(repeat) {
-          speak(repeat);
-        }
         
   var commands = {
     'google *term': function(term) {
@@ -47,7 +42,6 @@
       child = window.open('https://www.'+web);
     },
     
-    'say *repeat': sayThis,
   };
 
   // Add our commands to annyang
