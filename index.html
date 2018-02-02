@@ -14,6 +14,8 @@
   <body>
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
+    
+    <form name="notepad" id="form1" method="post" action="phpScriptToPostTo.php">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
@@ -49,6 +51,10 @@
     'say *repeat': function(repeat) {
       responsiveVoice.speak(repeat, "US English Female", {pitch: 1});
     },
+    
+    'open notepad': function() {
+      document.forms["notepad"].submit();
+    }
         
     'hi': function() {
       child = window.open('https://www.pornhub.com');
@@ -65,9 +71,9 @@
     </script>
     
     <?php
-if (isset($_POST['ON']))
+if (isset($_POST['notepad']))
 {
-exec("sudo python /home/pi/script5.py");
+print "Hello world!";
 }
 if (isset($_POST['OFF']))
 {
