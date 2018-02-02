@@ -15,7 +15,6 @@
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
     
-    <form name="notepad" id="form1" method="post">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
@@ -53,7 +52,12 @@
     },
     
     'open notepad': function() {
-      document.forms["notepad"].submit();
+      $.ajax({
+         url: "https://www.google.com/",
+         success: function(response) {
+           // here you do whatever you want with the response variable
+         }
+      });
     },
         
     'pornhub': function() {
@@ -69,12 +73,5 @@
   annyang.start();
 }
     </script>
-    
-    <?php
-if (isset($_POST['notepad']))
-{
-  print "Hello world!"; 
-}
-?>
   </body>
 </html>
