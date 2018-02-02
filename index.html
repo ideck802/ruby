@@ -30,7 +30,11 @@
       child = window.open('https://www.google.com/#q='+term);
     },
     
-    'close tab' or 'cloze tab': function() {
+    'close tab': function() {
+      child.close();
+    },
+    
+    'cloze tab': function() {
       child.close();
     },
     
