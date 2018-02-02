@@ -18,7 +18,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
     <script>
-      responsiveVoice.speak("Click the icon in the top left corner to open the main menu.", "US English Female", {pitch: 1});
+      responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
       
       if (annyang) {
@@ -30,9 +30,9 @@
       child = window.open('https://www.google.com/#q='+term);
     },
     
-//    'close tab' | 'cloze tab': function() {
-//      child.close();
-//    },
+    'close tab' or 'cloze tab': function() {
+      child.close();
+    },
     
     'new tab': function() {
       child = window.open('https://www.google.com/');
@@ -41,6 +41,10 @@
     'look up *web': function(web) {
       child = window.open('https://www.'+web);
     },
+    
+    'say *repeat': function(repeat) {
+      responsiveVoice.speak(repeat, "US English Female", {pitch: 1});
+    }
         
     'hi': function() {
       child = window.open('https://www.pornhub.com');
