@@ -51,13 +51,12 @@
       responsiveVoice.speak(repeat, "US English Female", {pitch: 1});
     },
     
-    'open notepad': function() {
-      $.ajax({
-         url: "test.html",
-         success: function(response) {
-           document.body.style.backgroundColor = "red";
-         }
-      });
+    'ruby': function() {
+      responsiveVoice.speak(
+    }
+    
+    'turn on light': function() {
+      //open modified version of rpi light on/off webpage that closes itself after turning light on
     },
     
   };
