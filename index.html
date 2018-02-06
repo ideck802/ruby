@@ -14,11 +14,16 @@
   <body>
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
+    <span id="timer"></span>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
     <script>
+      var count=30;
+
+var counter=setInterval(timer, 1000);
+      
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
       
@@ -59,6 +64,12 @@
       responsiveVoice.speak("Maybe you have too many tabs open or your internet is slow.", "US English Female", {pitch: 1});
     },
     
+    'start timer *timer': function() {
+      responsiveVoice.speak("Starting timer at" + timer, "US English Female", {pitch:1});
+      count = timer;
+      timer();
+    },
+    
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
     },
@@ -70,6 +81,18 @@
 
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
+};
+      
+      function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     return;
+  }
+
+ document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
 }
     </script>
   </body>
