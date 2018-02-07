@@ -63,8 +63,7 @@
       responsiveVoice.speak("Maybe you have too many tabs open or your internet is slow.", "US English Female", {pitch: 1});
     },
     
-    'start timer *timernumber': function() {
-      timernum = timernumber;
+    'start timer *timernum': function() {
       responsiveVoice.speak("Starting timer at" + timernum, "US English Female", {pitch:1});
       countdown();
     },
