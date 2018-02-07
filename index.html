@@ -21,13 +21,6 @@
     <script src="./scripts/responsivevoice.js"></script>
     <script>
       
-      
-      
-      
-      var count=30;
-
-var counter=setInterval(timer, 1000);
-      
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
       
@@ -84,16 +77,6 @@ var counter=setInterval(timer, 1000);
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 };
-      
-      function() {
-        var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("timer").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-      }
     </script>
   </body>
 </html>
