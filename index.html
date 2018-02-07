@@ -14,17 +14,10 @@
   <body>
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
-    <div ng-controller="counterCtrl">
- <!--Angular Binding -->  
-      <p ng-bind="counter"></p>
-      <button ng-click="stop()">Stop</button>
-      <button ng-click="countdown()">Start</button>     
-    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
     <script>
       
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
@@ -33,7 +26,6 @@
       if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
         var child;
-        var timernum;
         
   var commands = {
     'google *term': function(term) {
@@ -68,11 +60,6 @@
       responsiveVoice.speak("Maybe you have too many tabs open or your internet is slow.", "US English Female", {pitch: 1});
     },
     
-    'start timer *timernum': function() {
-      responsiveVoice.speak("Starting timer at" + timernum, "US English Female", {pitch:1});
-      countdown();
-    },
-    
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
     },
@@ -85,43 +72,7 @@
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 };
-      
-      
-      
-      var myModule = angular.module("mehmetcankerApp", [/* No Dependency Injection */]);
-//Modulu olusturduk. Modul herhangi bir DI'ye ihtiyaç duymuyor
-
-
-//timeout and scope are Angular's built-in services
-//Adding injector
-//Module timeout ve scope servislerini ekledik. Bunlar Anguların bizim için sağladığı yapısal servislerdir.
-myModule.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
-
- //Adding initial value for counter
- //counter modelimiz için ilk değer atamasını yaptık.   
-$scope.counter = 100;
-var stopped;
-
-//timeout function
-//1000 milliseconds = 1 second
-//Every second counts
-//Cancels a task associated with the promise. As a result of this, the //promise will be resolved with a rejection.  
-$scope.countdown = function() {
-    stopped = $timeout(function() {
-       console.log($scope.counter);
-     $scope.counter--;   
-     $scope.countdown();   
-    }, 1000);
-  };
-   
     
-$scope.stop = function(){
-   $timeout.cancel(stopped);
-    
-    } 
-
-
-}]);
     </script>
   </body>
 </html>
