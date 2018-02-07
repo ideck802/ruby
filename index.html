@@ -14,7 +14,12 @@
   <body>
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
-    <p ng-bind="counter"></p>
+    <div ng-controller="counterCtrl">
+ <!--Angular Binding -->  
+      <p ng-bind="counter"></p>
+      <button ng-click="stop()">Stop</button>
+      <button ng-click="countdown()">Start</button>     
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
