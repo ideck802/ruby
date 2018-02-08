@@ -23,10 +23,34 @@
         border-radius: 30px;
         border: 1px solid rgb(55, 186, 195);
       }
+      eye {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        margin: auto;
+        background: yellow;
+        width: 50px;
+        height: 50px;
+      }
+      eye > pupil {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        background: black;
+      }
     </style>
   </head>
   <body>
-    <div class="hud"></div>
+    <div class="hud">
+      <div class="eye"><div class="pupil"></div></div>
+    </div>
     
     <div id="audio"></div>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
