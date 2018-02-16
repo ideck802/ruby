@@ -213,6 +213,10 @@
     'why is this taking so long to load': function() {
       responsiveVoice.speak("Maybe you have too many tabs open or your internet is slow.", "US English Female", {pitch: 1});
     },
+	 
+    'hide hud': function() {
+      $(.hud).addClass("hidden");
+    }
     
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
