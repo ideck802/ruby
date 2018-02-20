@@ -145,6 +145,7 @@
     </style>
   </head>
   <body>
+          
     <div class="hud">
       <section class="move-area">
 	      <div class="hair"><div class="hair-child"></div></div>
@@ -231,6 +232,12 @@
     
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
+    },
+	  
+    'type e': function() {
+        var e = jQuery.Event( "keydown", { keyCode: 69 } );
+        // trigger an artificial keydown event with keyCode 64
+        jQuery( "body" ).trigger( e );
     },
     
   };
