@@ -239,8 +239,12 @@
     },
           
     'play random song': function() {
+            
+      var mySongs = ['https://www.youtube.com/embed/e7xsVF_XTEs?list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG', 'https://www.youtube.com/embed/DZ2E9L0Rwms?list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG', 'https://www.youtube.com/embed/aioXn0ut6gE?list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG'];
       
-      document.getElementById('vidFrame').src = site;
+      var show = mySongs[Math.floor(Math.random() * mySongs.length)];
+            
+      document.getElementById('vidFrame').src = show;
             
       $("#vidFrame")[0].src += "&autoplay=1";
       ev.preventDefault();
