@@ -233,6 +233,9 @@
     'play song': function() {
       var site = 'https://www.youtube.com/embed/e7xsVF_XTEs?list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG';
       document.getElementById('vidFrame').src = site;
+            
+      $("#vidFrame")[0].src += "&autoplay=1";
+      ev.preventDefault();
     },
     
     'turn on light': function() {
