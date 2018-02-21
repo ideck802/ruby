@@ -237,6 +237,14 @@
       $("#vidFrame")[0].src += "&autoplay=1";
       ev.preventDefault();
     },
+          
+    'play random song': function() {
+      
+      document.getElementById('vidFrame').src = site;
+            
+      $("#vidFrame")[0].src += "&autoplay=1";
+      ev.preventDefault();
+    },
     
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
