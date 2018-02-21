@@ -162,6 +162,7 @@
     </div>
 	  <div></div>
     <div id="audio"></div>
+    <iframe id="vidFrame" src="https://www.w3schools.com"></iframe>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar</p>
     <p><h3>List of commands:</h3>
       google *term<br>
@@ -228,15 +229,14 @@
     'show hud': function() {
       $(".hud").removeClass("hidden");
     },
+          
+    'play song': function() {
+      var site = 'https://www.youtube.com/watch?v=e7xsVF_XTEs&index=1&list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG';
+      document.getElementById('vidFrame').src = site;
+    }
     
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
-    },
-	  
-    'type e': function() {
-        var e = jQuery.Event( "keydown", { keyCode: 69 } );
-        // trigger an artificial keydown event with keyCode 64
-        jQuery( "body" ).trigger( e );
     },
     
   };
