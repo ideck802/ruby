@@ -176,6 +176,8 @@
       show hud<br>
       play song<br>
       play random song<br>
+      play<br>
+      pause<br>
     </p>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -286,6 +288,14 @@
             
       $("#vidFrame")[0].src += "&autoplay=1";
       ev.preventDefault();
+    },
+          
+    'play': function() {
+      $("#vidFrame").get(0).play();
+    },
+          
+    'pause': function() {
+      $("#vidFrame").get(0).pause();
     },
     
     'turn on light': function() {
