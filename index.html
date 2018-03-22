@@ -291,11 +291,15 @@
     },
           
     'play': function() {
-      player.playVideo();
+      $('#vidFrame').each(function(){
+        this.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*')
+      });
     },
           
     'pause': function() {
-      player.pauseVideo();
+      $('#vidFrame').each(function(){
+        this.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*')
+      });
     },
     
     'turn on light': function() {
