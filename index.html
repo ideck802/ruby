@@ -178,6 +178,7 @@
       play random song<br>
       play<br>
       pause<br>
+      stop<br>
     </p>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -295,6 +296,10 @@
            
      'pause': function() {
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+     },
+          
+     'stop': function() {
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
      },
     
     'turn on light': function() {
