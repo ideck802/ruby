@@ -241,7 +241,7 @@
     },
           
     'play song': function() {
-      var site = 'https://www.youtube.com/embed/e7xsVF_XTEs?list=PLBKAFEFN7AWFQnucPAnCET88FtVfcLklG';
+      var site = 'https://www.youtube.com/embed/e7xsVF_XTEs?enablejsapi=1&version=3&playerapiid=ytplayer';
       document.getElementById('vidFrame').src = site;
             
       $("#vidFrame")[0].src += "&autoplay=1";
@@ -250,37 +250,37 @@
           
     'play random song': function() {
             
-      var mySongs = ['https://www.youtube.com/embed/e7xsVF_XTEs?enablejsapi=1',
-		     'https://www.youtube.com/embed/DZ2E9L0Rwms?enablejsapi=1', 
-		     'https://www.youtube.com/embed/aioXn0ut6gE?enablejsapi=1',
-		     'https://www.youtube.com/embed/DZ2E9L0Rwms?enablejsapi=1',
-		     'https://www.youtube.com/embed/Cwkej79U3ek?enablejsapi=1',
-		     'https://www.youtube.com/embed/vIT8FK_50Vs?enablejsapi=1',
-		     'https://www.youtube.com/embed/IvMYDp_c66Q?enablejsapi=1',
-		     'https://www.youtube.com/embed/fpf3zBgvXT4?enablejsapi=1',
-		     'https://www.youtube.com/embed/Yj4yTAXxcp4?enablejsapi=1',
-		     'https://www.youtube.com/embed/fn4qY0pC4Z4?enablejsapi=1',
-		     'https://www.youtube.com/embed/m6z3OXyFE-I?enablejsapi=1',
-		     'https://www.youtube.com/embed/bjQzJAKxTrE?enablejsapi=1',
-		     'https://www.youtube.com/embed/djV11Xbc914?enablejsapi=1',
-		     'https://www.youtube.com/embed/dVVZaZ8yO6o?enablejsapi=1',
-		     'https://www.youtube.com/embed/gK_O20Pg3Qc?enablejsapi=1',
-		     'https://www.youtube.com/embed/fkBE1J_etsc?enablejsapi=1',
-		     'https://www.youtube.com/embed/GVN17U3Vg34?enablejsapi=1',
-		     'https://www.youtube.com/embed/wzPRS4X6AXI?enablejsapi=1',
-		     'https://www.youtube.com/embed/N5wVZwdHmRY?enablejsapi=1',
-		     'https://www.youtube.com/embed/RIYd6Xdn88U?enablejsapi=1',
-		     'https://www.youtube.com/embed/WlRpGj7LWS4?enablejsapi=1',
-		     'https://www.youtube.com/embed/4jzsKJvWiEI?enablejsapi=1',
-		     'https://www.youtube.com/embed/3FvtiNHNJ9I?enablejsapi=1',
-		     'https://www.youtube.com/embed/DavJ9UKS2ps?enablejsapi=1',
-		     'https://www.youtube.com/embed/sbOcVER0WqU?enablejsapi=1',
-		     'https://www.youtube.com/embed/qdpvj_iVAFk?enablejsapi=1',
-		     'https://www.youtube.com/embed/LBr7kECsjcQ?enablejsapi=1',
-		     'https://www.youtube.com/embed/ySER3OT5etg?enablejsapi=1',
-		     'https://www.youtube.com/embed/coyBZYv-u_o?enablejsapi=1',
-		     'https://www.youtube.com/embed/Y6ljFaKRTrI?enablejsapi=1',
-		     'https://www.youtube.com/embed/CyY-ngeCeNs?enablejsapi=1'];
+      var mySongs = ['https://www.youtube.com/embed/e7xsVF_XTEs?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/DZ2E9L0Rwms?enablejsapi=1&version=3&playerapiid=ytplayer', 
+		     'https://www.youtube.com/embed/aioXn0ut6gE?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/DZ2E9L0Rwms?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/Cwkej79U3ek?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/vIT8FK_50Vs?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/IvMYDp_c66Q?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/fpf3zBgvXT4?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/Yj4yTAXxcp4?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/fn4qY0pC4Z4?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/m6z3OXyFE-I?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/bjQzJAKxTrE?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/djV11Xbc914?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/dVVZaZ8yO6o?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/gK_O20Pg3Qc?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/fkBE1J_etsc?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/GVN17U3Vg34?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/wzPRS4X6AXI?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/N5wVZwdHmRY?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/RIYd6Xdn88U?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/WlRpGj7LWS4?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/4jzsKJvWiEI?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/3FvtiNHNJ9I?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/DavJ9UKS2ps?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/sbOcVER0WqU?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/qdpvj_iVAFk?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/LBr7kECsjcQ?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/ySER3OT5etg?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/coyBZYv-u_o?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/Y6ljFaKRTrI?enablejsapi=1&version=3&playerapiid=ytplayer',
+		     'https://www.youtube.com/embed/CyY-ngeCeNs?enablejsapi=1&version=3&playerapiid=ytplayer'];
       
       var show = mySongs[Math.floor(Math.random() * mySongs.length)];
             
@@ -290,11 +290,11 @@
     },
           
     'play': function() {
-       $("#vidFrame").get(0).play();
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
      },
            
      'pause': function() {
-       $("#vidFrame").get(0).pause();
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
      },
     
     'turn on light': function() {
