@@ -301,6 +301,13 @@
      'stop': function() {
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
      },
+          
+     'ruby the time' : function() {
+       var d = new Date();
+       var n = d.toTimeString();
+             
+       responsiveVoice.speak(n, "US English Female", {pitch: 1});
+     },
     
     'turn on light': function() {
       //open modified version of rpi light on/off webpage that closes itself after turning light on
