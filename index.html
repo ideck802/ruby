@@ -303,10 +303,11 @@
      },
           
      'the time' : function() {
-       var d = new Date();
-       var n = d.toTimeString();
+       var time = new Date();
+       var timeString = time.toTimeString();
+       var timeStringShort = timeString.substring(0, 8);
              
-       responsiveVoice.speak(n, "US English Female", {pitch: 1});
+       responsiveVoice.speak(timeStringShort, "US English Female", {pitch: 1});
      },
     
     'turn on light': function() {
