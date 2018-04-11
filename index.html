@@ -302,7 +302,28 @@
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
      },
           
+     'ruby the time' : function() {
+       var time = new Date();
+       var timeString = time.toTimeString();
+       var timeStringShort = timeString.substring(0, 8);
+             
+       responsiveVoice.speak(timeStringShort, "US English Female", {pitch: 1});
+     },
+     'ruby whats the time' : function() {
+       var time = new Date();
+       var timeString = time.toTimeString();
+       var timeStringShort = timeString.substring(0, 8);
+             
+       responsiveVoice.speak(timeStringShort, "US English Female", {pitch: 1});
+     },
      'the time' : function() {
+       var time = new Date();
+       var timeString = time.toTimeString();
+       var timeStringShort = timeString.substring(0, 8);
+             
+       responsiveVoice.speak(timeStringShort, "US English Female", {pitch: 1});
+     },
+     'whats the time' : function() {
        var time = new Date();
        var timeString = time.toTimeString();
        var timeStringShort = timeString.substring(0, 8);
