@@ -191,7 +191,7 @@
     <script src="./scripts/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
     <script>
-        $("#vidFrame").click();
+        $('vidFrame').contents().find('body').trigger('click');
       
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
