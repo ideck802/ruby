@@ -292,6 +292,7 @@
       document.getElementById('vidFrame').src = show;
             
       $("#vidFrame")[0].src += "&autoplay=1";
+      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     },
           
     'play': function() {
