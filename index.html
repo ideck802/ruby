@@ -250,7 +250,6 @@
       document.getElementById('vidFrame').src = site;
             
       $("#vidFrame")[0].src += "&autoplay=1";
-      ev.preventDefault();
     },
           
     'play random song': function() {
@@ -292,7 +291,6 @@
       document.getElementById('vidFrame').src = show;
             
       $("#vidFrame")[0].src += "&autoplay=1";
-      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     },
           
     'play': function() {
