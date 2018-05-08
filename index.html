@@ -191,7 +191,7 @@
     <script src="./scripts/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
     <script>
-        $('vidFrame').contents().find('body').trigger('click');
+        
       
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
@@ -289,7 +289,7 @@
       var show = mySongs[Math.floor(Math.random() * mySongs.length)];
       
       document.getElementById('vidFrame').src = show;
-            
+            $('vidFrame').contents().find('body').trigger('click');
       $("#vidFrame")[0].src += "&autoplay=1";
     },
           
