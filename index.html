@@ -289,7 +289,7 @@
       var show = mySongs[Math.floor(Math.random() * mySongs.length)];
       
       document.getElementById('vidFrame').src = show;
-            $('vidFrame').contents().find('body').trigger('click');
+            
       $("#vidFrame")[0].src += "&autoplay=1";
     },
           
