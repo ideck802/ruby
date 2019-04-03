@@ -200,10 +200,14 @@
       if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
         var child = [];
-        
+        var newwin;
+              
   var commands = {
     'google *term': function(term) {
-      child.push("tab" + child.length + window.open('https://www.google.com/#q='+term));
+      //child.push("tab" + child.length + window.open('https://www.google.com/#q='+term));
+      
+      newwin = window.open('https://www.google.com/#q='+term);
+      child.push(newwin);
       console.log(child);
     },
     
@@ -218,31 +222,27 @@
     },
     
     'cloze all tabs': function() {
-        for (i = 0; i < child.length; i++) {
+        for (var i=0; i<child.length; i++) {
           child[i].close();
         }
-            console.log(child);
     },
 	  
     'close all tabs': function() {
-      for (i = 0; i < child.length; i++) {
+        for (var i=0; i<child.length; i++) {
           child[i].close();
         }
-            console.log(child);
     },
           
     'cloze all tabz': function() {
-      for (i = 0; i < child.length; i++) {
+        for (var i=0; i<child.length; i++) {
           child[i].close();
         }
-            console.log(child);
     },
 	  
     'close all tabz': function() {
-      for (i = 0; i < child.length; i++) {
+        for (var i=0; i<child.length; i++) {
           child[i].close();
         }
-            console.log(child);
     },
           
     'refresh page': function() {
