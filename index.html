@@ -199,14 +199,30 @@
       
       if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
-        var child;
+        var child = [];
         
   var commands = {
     'google *term': function(term) {
-      child = window.open('https://www.google.com/#q='+term);
+      child.push = window.open('https://www.google.com/#q='+term);
     },
     
     'close tab': function() {
+      child.close();
+    },
+    
+    'cloze all tabs': function() {
+      child.close();
+    },
+	  
+    'close all tabs': function() {
+      child.close();
+    },
+          
+    'cloze all tabz': function() {
+      child.close();
+    },
+	  
+    'close all tabz': function() {
       child.close();
     },
     
@@ -219,11 +235,11 @@
     },
     
     'new tab': function() {
-      child = window.open('https://www.google.com/');
+      child.push = window.open('https://www.google.com/');
     },
     
     'look up *web': function(web) {
-      child = window.open('https://www.'+web);
+      child.push = window.open('https://www.'+web);
     },
     
     'say *repeat': function(repeat) {
