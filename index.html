@@ -204,21 +204,24 @@
               
   var commands = {
     'google *term': function(term) {
-      //child.push("tab" + child.length + window.open('https://www.google.com/#q='+term));
-      
       newwin = window.open('https://www.google.com/#q='+term);
       child.push(newwin);
-      console.log(child);
     },
     
-    'close tab': function() {
-      child[1].close();
-            console.log(child);
+    'close tab *num': function() {
+      child[num].close();
     },
           
-    'cloze tab': function() {
-      child[1].close();
-            console.log(child);
+    'cloze tab *num': function() {
+      child[num].close();
+    },
+          
+    'close most recent tab': function() {
+      child[child.length - 1].close();
+    },
+          
+    'cloze most recent tab': function() {
+      child[child.length - 1].close();
     },
     
     'cloze all tabs': function() {
