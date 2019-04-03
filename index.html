@@ -209,25 +209,33 @@
     'close tab': function() {
       child.close();
     },
+          
+    'cloze tab': function() {
+      child.close();
+    },
     
     'cloze all tabs': function() {
-      child.close();
+        for (i = 0; i < child.length; i++) {
+          child[i].close();
+        }
     },
 	  
     'close all tabs': function() {
-      child.close();
+      for (i = 0; i < child.length; i++) {
+          child[i].close();
+        }
     },
           
     'cloze all tabz': function() {
-      child.close();
+      for (i = 0; i < child.length; i++) {
+          child[i].close();
+        }
     },
 	  
     'close all tabz': function() {
-      child.close();
-    },
-    
-    'cloze tab': function() {
-      child.close();
+      for (i = 0; i < child.length; i++) {
+          child[i].close();
+        }
     },
           
     'refresh page': function() {
