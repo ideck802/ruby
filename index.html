@@ -167,7 +167,9 @@
     <p><h3>List of commands:</h3>
       google *term<br>
       look up *website name<br>
-      close tab (only works on recently opened tab that was opened with Ruby)<br>
+      close tab *number (the first tab is 0, the second 1, etc)<br>
+      close most recent tab<br>
+      close all tabs<br>
       new tab<br>
       say *what she will repeat<br>
       ruby<br>
@@ -208,12 +210,12 @@
       child.push(newwin);
     },
     
-    'close tab *num': function() {
-      child[num].close();
+    'close tab *number': function() {
+      child[number].close();
     },
           
-    'cloze tab *num': function() {
-      child[num].close();
+    'cloze tab *number': function() {
+      child[number].close();
     },
           
     'close most recent tab': function() {
@@ -253,7 +255,8 @@
     },
     
     'new tab': function() {
-      child.push = window.open('https://www.google.com/');
+      newwin = window.open('https://www.google.com/);
+      child.push(newwin);
     },
     
     'look up *web': function(web) {
