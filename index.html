@@ -203,7 +203,8 @@
         
   var commands = {
     'google *term': function(term) {
-      child.push("tab" + child.length + "= window.open('https://www.google.com/#q='+term)");
+      openwindow = window.open('https://www.google.com/#q='+term);
+      child.push("tab" + child.length + openwindow);
       console.log(child);
     },
     
