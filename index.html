@@ -187,6 +187,19 @@
       what's the time<br>
       thank you<br>
     </p>
+        <div id="container">
+  <input id="txtSearch" type="text" />
+  <button id="btnSearch">
+    Search!
+  </button>
+  <br />
+  <p id='first-video-title'> </p>
+  <p id='first-video-description'></p>
+  <a target="_blank" id="first-video"></a>
+  <div id='search-results'>
+  
+  </div>
+</div>
     <script src="https://apis.google.com/js/api.js"></script>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -284,18 +297,34 @@
     },
           
     'play song *songname': function() {
-      var request = gapi.client.youtube.search.list({
-            part: "snippet",
-            type: "video",
-            q: songname,
-            maxResults: 3,
-            order: "viewCount"
-       }); 
-       // execute the request
-       request.execute(function(response) {
-          var results = response.result;
-          debug.log(results);
-          });
+      function search() {
+    gapi.client.init({
+    'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
+    'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+  }).then(function() {
+    return gapi.client.youtube.search.list({
+      q: songname,
+      part: 'snippet'
+    });
+  }).then(function(response) {
+  	var searchResult = response.result;
+    $('#search-results').append(JSON.stringify(searchResult, null, 4))
+  	console.log(searchResult.items[0])
+    var firstVideo = searchResult.items[0]
+    firstVideo.url = `https://youtube.com/watch?v=${firstVideo.id.videoId}`
+    $('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
+    $('#first-video-title').text(firstVideo.snippet.title)
+    $('#first-video-description').text(firstVideo.snippet.description)
+  });
+
+}
+
+
+$('#btnSearch').on('click', function() {
+  	$('#first-video-title').text("")
+    
+  	gapi.load('client', search)
+  });
     },
           
     'play song': function() {
