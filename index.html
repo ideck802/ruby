@@ -317,7 +317,11 @@
     $('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
     $('#first-video-title').text(firstVideo.snippet.title)
     $('#first-video-description').text(firstVideo.snippet.description)
-            console.log(response[0].link)
+            
+            var site = firstVideo.url + '?enablejsapi=1&version=3&playerapiid=ytplayer';
+      document.getElementById('vidFrame').src = site;
+            
+            $("#vidFrame")[0].src += "?autoplay=1";
   });
 
 }
