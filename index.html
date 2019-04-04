@@ -203,20 +203,11 @@
   // Let's define our first command. First the text we expect, and then the function it should call
         var child = [];
         var newwin;
-        var number;
               
   var commands = {
     'google *term': function(term) {
       newwin = window.open('https://www.google.com/#q='+term);
       child.push(newwin);
-    },
-    
-    'close tab *number': function() {
-      child[window.number].close();
-    },
-          
-    'cloze tab *number': function() {
-      child[window.number].close();
     },
           
     'close most recent tab': function() {
@@ -267,7 +258,8 @@
     },
     
     'look up *web': function(web) {
-      child.push = window.open('https://www.'+web);
+      newwin = window.open('https://www.'+web);
+      child.push(newwin);
     },
     
     'say *repeat': function(repeat) {
@@ -381,10 +373,6 @@
           
      'thank you' : function() {
        responsiveVoice.speak("you are welcome", "US English Female", {pitch: 1});
-     },
-          
-     'spell i cup' : function() {
-       responsiveVoice.speak("you see you pea", "US English Female", {pitch: 1});
      },
     
     'turn on light': function() {
