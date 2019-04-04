@@ -285,7 +285,7 @@
           
     'play *songnamespoken': function(songnamespoken) {
       songname = songnamespoken;
-      responsiveVoice.speak("Playing song" + songname + ". Please wait.", "US English Female", {pitch: 1});
+      responsiveVoice.speak("Playing song " + songname + ". Please wait.", "US English Female", {pitch: 1});
       function search() {
         gapi.client.init({
           'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
