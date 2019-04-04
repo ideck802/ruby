@@ -187,19 +187,6 @@
       what's the time<br>
       thank you<br>
     </p>
-        <div id="container">
-  <input id="txtSearch" type="text" />
-  <button id="btnSearch">
-    Search!
-  </button>
-  <br />
-  <p id='first-video-title'> </p>
-  <p id='first-video-description'></p>
-  <a target="_blank" id="first-video"></a>
-  <div id='search-results'>
-  
-  </div>
-</div>
     <script src="https://apis.google.com/js/api.js"></script>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -310,13 +297,9 @@
     });
   }).then(function(response) {
   	var searchResult = response.result;
-    $('#search-results').append(JSON.stringify(searchResult, null, 4))
   	console.log(searchResult.items[0])
     var firstVideo = searchResult.items[0]
     firstVideo.url = `https://youtube.com/embed/${firstVideo.id.videoId}`
-    $('#first-video').text(firstVideo.url).attr('href', firstVideo.url)
-    $('#first-video-title').text(firstVideo.snippet.title)
-    $('#first-video-description').text(firstVideo.snippet.description)
             
             var site = firstVideo.url + '?enablejsapi=1&version=3&playerapiid=ytplayer';
       document.getElementById('vidFrame').src = site;
@@ -327,11 +310,11 @@
 }
 
 
-$('#btnSearch').on('click', function() {
-  	$('#first-video-title').text("")
+//$('#btnSearch').on('click', function() {
+//  	$('#first-video-title').text("")
     
   	gapi.load('client', search)
-  });
+//  });
     },
           
     'play song': function() {
