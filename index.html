@@ -176,7 +176,7 @@
       why is this taking so long to load<br>
       hide hud<br>
       show hud<br>
-      play song<br>
+      play *video to search (this command searches youtube for the string you search and plays the first video in the list)<br>
       play random song<br>
       play<br>
       pause<br>
@@ -284,7 +284,7 @@
       $(".hud").removeClass("hidden");
     },
           
-    'play song *songnamespoken': function(songnamespoken) {
+    'play *songnamespoken': function(songnamespoken) {
       songname = songnamespoken;
       function search() {
         gapi.client.init({
@@ -302,13 +302,6 @@
         });
       }
       gapi.load('client', search)
-    },
-          
-    'play song': function() {
-      var site = 'https://www.youtube.com/embed/e7xsVF_XTEs?enablejsapi=1&version=3&playerapiid=ytplayer';
-      document.getElementById('vidFrame').src = site;
-            
-      $("#vidFrame")[0].src += "?autoplay=1";
     },
           
     'play random song': function() {
