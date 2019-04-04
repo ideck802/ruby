@@ -286,32 +286,20 @@
           
     'play song *songnamespoken': function(songnamespoken) {
       songname = songnamespoken;
-      function search() {
-    gapi.client.init({
-    'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
-    'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
-  }).then(function() {
-    return gapi.client.youtube.search.list({
-      q: songname,
-      part: 'snippet'
-    });
-  }).then(function(response) {
-  	var searchResult = response.result;
-  	console.log(searchResult.items[0])
-    //var firstVideo = searchResult.items[0]
-      var site = `https://youtube.com/embed/${searchResult.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer';
-      document.getElementById('vidFrame').src = site;
-      $("#vidFrame")[0].src += "?autoplay=1";
-  });
-
-}
-
-
-//$('#btnSearch').on('click', function() {
-//  	$('#first-video-title').text("")
-    
-  	gapi.load('client', search)
-//  });
+      gapi.client.init({
+        'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+      }).then(function() {
+        return gapi.client.youtube.search.list({
+          q: songname,
+          part: 'snippet'
+        });
+      }).then(function(response) {
+        var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer';
+        document.getElementById('vidFrame').src = site;
+        $("#vidFrame")[0].src += "?autoplay=1";
+      });
+      gapi.load('client', search)
     },
           
     'play song': function() {
