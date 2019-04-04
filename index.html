@@ -167,7 +167,7 @@
     <p><h3>List of commands:</h3>
       google *term<br>
       look up *website name<br>
-      close most recent tab<br>
+      close tab (closes the most recently opened tab)<br>
       close all tabs<br>
       new tab<br>
       refresh page<br>
@@ -210,12 +210,12 @@
       child.push(newwin);
     },
           
-    'close most recent tab': function() {
+    'close tab': function() {
       child[child.length - 1].close();
       child.pop();
     },
           
-    'cloze most recent tab': function() {
+    'cloze tab': function() {
       child[child.length - 1].close();
       child.pop();
     },
