@@ -298,13 +298,10 @@
   }).then(function(response) {
   	var searchResult = response.result;
   	console.log(searchResult.items[0])
-    var firstVideo = searchResult.items[0]
-    firstVideo.url = `https://youtube.com/embed/${firstVideo.id.videoId}`
-            
-            var site = firstVideo.url + '?enablejsapi=1&version=3&playerapiid=ytplayer';
+    //var firstVideo = searchResult.items[0]
+      var site = `https://youtube.com/embed/${searchResult.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer';
       document.getElementById('vidFrame').src = site;
-            
-            $("#vidFrame")[0].src += "?autoplay=1";
+      $("#vidFrame")[0].src += "?autoplay=1";
   });
 
 }
