@@ -203,6 +203,7 @@
   // Let's define our first command. First the text we expect, and then the function it should call
         var child = [];
         var newwin;
+        var number;
               
   var commands = {
     'google *term': function(term) {
@@ -220,33 +221,39 @@
           
     'close most recent tab': function() {
       child[child.length - 1].close();
+      child.pop();
     },
           
     'cloze most recent tab': function() {
       child[child.length - 1].close();
+      child.pop();
     },
     
     'cloze all tabs': function() {
         for (var i=0; i<child.length; i++) {
           child[i].close();
+          child.pop();
         }
     },
 	  
     'close all tabs': function() {
         for (var i=0; i<child.length; i++) {
           child[i].close();
+          child.pop();
         }
     },
           
     'cloze all tabz': function() {
         for (var i=0; i<child.length; i++) {
           child[i].close();
+          child.pop();
         }
     },
 	  
     'close all tabz': function() {
         for (var i=0; i<child.length; i++) {
           child[i].close();
+          child.pop();
         }
     },
           
