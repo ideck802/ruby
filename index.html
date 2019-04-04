@@ -217,6 +217,7 @@
   // Let's define our first command. First the text we expect, and then the function it should call
         var child = [];
         var newwin;
+        var songname;
               
   var commands = {
     'google *term': function(term) {
@@ -296,7 +297,8 @@
       $(".hud").removeClass("hidden");
     },
           
-    'play song *songname': function() {
+    'play song *songnamespoken': function() {
+      songname = songnamespoken;
       function search() {
     gapi.client.init({
     'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
