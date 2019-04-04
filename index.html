@@ -297,8 +297,8 @@
       $(".hud").removeClass("hidden");
     },
           
-    'play song *songnamespoken': function() {
-      songname = window.songnamespoken;
+    'play song *songnamespoken': function(songnamespoken) {
+      songname = songnamespoken;
       function search() {
     gapi.client.init({
     'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
