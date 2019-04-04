@@ -282,6 +282,15 @@
       $(".hud").removeClass("hidden");
     },
           
+    'play song *songname': function() {
+      var results = YouTube.Search.list('id,snippet', {q: songname, maxResults: 25});
+            
+      for(var i in results.items) {
+         var item = results.items[i];
+         Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+      }
+    }
+          
     'play song': function() {
       var site = 'https://www.youtube.com/embed/e7xsVF_XTEs?enablejsapi=1&version=3&playerapiid=ytplayer';
       document.getElementById('vidFrame').src = site;
