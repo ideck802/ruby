@@ -308,15 +308,12 @@
             
             function onYouTubeIframeAPIReady() {
   var player;
-  player = new YT.Player('player', {
+  player = new YT.Player('vidFrame', {
     width: 1280,
     height: 720,
     videoId: vidID,
     events: {
-      'onReady': onPlayerReady,
-      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
-      'onStateChange': onPlayerStateChange,
-      'onError': onPlayerError
+      'onReady': onPlayerReady
     }
   });
 }
