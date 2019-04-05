@@ -170,7 +170,6 @@
       close tab (closes the most recently opened tab)<br>
       close all tabs<br>
       new tab<br>
-      refresh page *which tab to refresh (the first is zero, the second one, etc.)<br>
       say *what she will repeat<br>
       ruby<br>
       why is this taking so long to load<br>
@@ -247,10 +246,6 @@
           child[i].close();
         }
         child.length = 0
-    },
-          
-    'refresh page *num': function(num) {
-      child[num].location.reload();
     },
     
     'new tab': function() {
