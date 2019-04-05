@@ -186,6 +186,7 @@
       what's the time<br>
       thank you<br>
     </p>
+        
     <script src="https://apis.google.com/js/api.js"></script>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -194,7 +195,11 @@
     <script src="./scripts/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
     <script>
-        
+        var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
@@ -280,7 +285,8 @@
     },
           
     'play *songnamespoken': function(songnamespoken) {
-      songname = songnamespoken;
+      var songname = songnamespoken;
+      var vidID;
       responsiveVoice.speak("Playing " + songname + ". Please wait.", "US English Female", {pitch: 1});
       function search() {
         gapi.client.init({
@@ -292,18 +298,33 @@
             part: 'snippet'
           });
         }).then(function(response) {
-          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1';
-          document.getElementById('vidFrame').src = site;
+          //var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1';
+          //document.getElementById('vidFrame').src = site;
+          vidID = ${response.result.items[0].id.videoId};
         });
       }
       gapi.load('client', search)
-      if ($('#vidFrame')[0].PlayerState.PLAYING) {
-        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
-      }
-    },
-          
-    'unmute': function() {
-      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
+            
+            
+            function onYouTubeIframeAPIReady() {
+  var player;
+  player = new YT.Player('player', {
+    width: 1280,
+    height: 720,
+    videoId: vidID,
+    events: {
+      'onReady': onPlayerReady,
+      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+      'onStateChange': onPlayerStateChange,
+      'onError': onPlayerError
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  event.target.unMute();
+  event.target.playVideo();
+}
     },
           
     'play': function() {
