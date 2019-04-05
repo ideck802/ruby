@@ -297,6 +297,7 @@
         });
       }
       gapi.load('client', search)
+      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
     },
           
     'play': function() {
