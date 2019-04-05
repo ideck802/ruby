@@ -300,7 +300,7 @@
         }).then(function(response) {
           //var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1';
           //document.getElementById('vidFrame').src = site;
-          vidID = ${response.result.items[0].id.videoId};
+          vidID = response.result.items[0].id.videoId;
         });
       }
       gapi.load('client', search)
