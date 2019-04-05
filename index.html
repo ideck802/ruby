@@ -170,7 +170,7 @@
       close tab (closes the most recently opened tab)<br>
       close all tabs<br>
       new tab<br>
-      refresh page<br>
+      refresh page *which tab to refresh (the first is zero, the second one, etc.)<br>
       say *what she will repeat<br>
       ruby<br>
       why is this taking so long to load<br>
@@ -249,8 +249,8 @@
         child.length = 0
     },
           
-    'refresh page': function() {
-      child.location.reload();
+    'refresh page *num': function(num) {
+      child[num].location.reload();
     },
     
     'new tab': function() {
@@ -285,7 +285,7 @@
           
     'play *songnamespoken': function(songnamespoken) {
       songname = songnamespoken;
-      responsiveVoice.speak("Playing song " + songname + ". Please wait.", "US English Female", {pitch: 1});
+      responsiveVoice.speak("Playing " + songname + ". Please wait.", "US English Female", {pitch: 1});
       function search() {
         gapi.client.init({
           'apiKey': 'AIzaSyClk82fxt90dVI38rdqBkWpEzMSE2yEjIc', 
