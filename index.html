@@ -292,7 +292,7 @@
         }).then(function(response) {
           var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1';
           document.getElementById('vidFrame').src = site;
-          setTimeout(function(){ $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*'); }, 5000);
+          setTimeout(function(){ $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*'); }, 3000);
           
         });
       }
@@ -300,7 +300,7 @@
     },
           
     'unmute and play': function() {
-      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unmute' + '","args":""}', '*');
+      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     },
           
