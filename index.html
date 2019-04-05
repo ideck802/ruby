@@ -162,7 +162,7 @@
     </div>
 	  <div></div>
     <div id="audio"></div>
-    <iframe id="vidFrame" src="" allow="autoplay"></iframe>
+    <iframe id="vidFrame" src=""></iframe>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar.</p>
     <p>You may need to whitelist this site to have the youtube videos play automatically.</p>
     <p><h3>List of commands:</h3>
@@ -292,9 +292,8 @@
             part: 'snippet'
           });
         }).then(function(response) {
-          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer';
+          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&mute=1';
           document.getElementById('vidFrame').src = site;
-          $("#vidFrame")[0].src += "&autoplay=1";
         });
       }
       gapi.load('client', search)
