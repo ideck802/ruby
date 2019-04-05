@@ -297,7 +297,7 @@
           document.getElementById('vidFrame').src = site;
         });
               var innerDoc = document.getElementById('vidFrame').contentDocument || document.getElementById('vidFrame').contentWindow.document;
-              innnerDoc.$(".video-stream").onplaying = function() {
+              innerDoc.$(".video-stream").onplaying = function() {
                 alert("The video is now playing");
                 $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
               };
