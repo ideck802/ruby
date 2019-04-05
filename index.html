@@ -212,6 +212,7 @@
               
   var commands = {
     'google *term': function(term) {
+      responsiveVoice.speak("Googling " + term, "US English Female", {pitch: 1});
       newwin = window.open('https://www.google.com/#q='+term);
       child.push(newwin);
     },
@@ -260,6 +261,7 @@
     },
     
     'look up *web': function(web) {
+      responsiveVoice.speak("Looking up " + web, "US English Female", {pitch: 1});
       newwin = window.open('https://www.'+web);
       child.push(newwin);
     },
