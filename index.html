@@ -308,7 +308,7 @@
       gapi.load('client', search)
             
             
-            function onYouTubeIframeAPIReady() {
+            
   var player;
   player = new YT.Player('vidFrame', {
     width: 1280,
@@ -318,7 +318,7 @@
       'onReady': onPlayerReady
     }
   });
-}
+
 
 function onPlayerReady(event) {
   event.target.unMute();
