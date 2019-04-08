@@ -162,7 +162,7 @@
     </div>
 	  <div></div>
     <div id="audio"></div>
-    <iframe id="vidFrame" src=""></iframe>
+    <iframe id="vidFrame" src=""><p>Please click in here once for the youtube music commands to work properly.</p></iframe>
     <p>Please accept microphone usage and allow popups when the popup blocker box shows up in the url bar.</p>
     <p><h3>List of commands:</h3>
       google *term<br>
@@ -290,7 +290,7 @@
             part: 'snippet'
           });
         }).then(function(response) {
-          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer';
+          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1';
           document.getElementById('vidFrame').src = site;
         });
       }
