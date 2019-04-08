@@ -326,7 +326,7 @@
      },
           
      'set volume *volnum': function(volnum) {
-       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'setVolume' + '","args":"3"}', '*');
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'setVolume' + '","volume":"volnum"}', '*');
        responsiveVoice.speak("Setting volume.", "US English Female", {pitch: 1});
      },
           
