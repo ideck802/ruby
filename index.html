@@ -327,6 +327,7 @@
           
      'set the volume to *volnum': function(volnum) {
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'setVolume' + '","args":"volnum"}', '*');
+       responsiveVoice.speak("Setting volume.", "US English Female", {pitch: 1});
      },
           
      'ruby the time' : function() {
