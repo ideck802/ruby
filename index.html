@@ -326,7 +326,7 @@
      },
           
      'set the volume to *volnum': function(volnum) {
-       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":"volnum"}', '*');
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'setVolume' + '","args":"volnum"}', '*');
      },
           
      'ruby the time' : function() {
