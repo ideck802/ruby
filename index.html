@@ -179,6 +179,9 @@
       play<br>
       pause<br>
       stop<br>
+      mute<br>
+      unmute<br>
+      set the volume to *number<br>
       Ruby, the time<br>
       Ruby, what's the time<br>
       the time<br>
@@ -312,6 +315,18 @@
           
      'stop': function() {
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+     },
+          
+     'mute': function() {
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'mute' + '","args":""}', '*');
+     },
+          
+     'unmute': function() {
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
+     },
+          
+     'set the volume to *volnum': function(volnum) {
+       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":"volnum"}', '*');
      },
           
      'ruby the time' : function() {
