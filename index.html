@@ -144,7 +144,7 @@
 	    }
     </style>
   </head>
-  <body onload="document.getElementById(\'vidFrame\').contentWindow.document.write(\"<html><body>Please click here once for the youtube music commands to work properly.</body></html>\")">
+  <body onload="onloadFunction()">
           
     <div class="hud">
       <section class="move-area">
@@ -193,6 +193,11 @@
     <script src="./scripts/jquery.min.js"></script>
     <script src="./scripts/annyang.min.js"></script>
     <script src="./scripts/responsivevoice.js"></script>
+    <script>
+      function onloadFunction() {
+        document.getElementById('vidFrame').contentWindow.document.write("<html><body>Please click here once for the youtube music commands to work properly.</body></html>");
+      }
+    </script>
     <script>      
       responsiveVoice.speak("Hello. I am Ruby.", "US English Female", {pitch: 1});
       
