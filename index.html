@@ -295,16 +295,11 @@
             part: 'snippet'
           });
         }).then(function(response) {
-          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1';
+          var site = `https://youtube.com/embed/${response.result.items[0].id.videoId}` + '?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1&loop=1&playlist=' + `${response.result.items[0].id.videoId}`;
           document.getElementById('vidFrame').src = site;
         });
       }
       gapi.load('client', search)
-    },
-          
-    'unmute and play': function() {
-      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
-      $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
     },
           
     'play': function() {
