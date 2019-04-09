@@ -181,7 +181,6 @@
       stop<br>
       mute<br>
       unmute<br>
-      change volume to *number<br>
       Ruby, the time<br>
       Ruby, what's the time<br>
       the time<br>
@@ -323,11 +322,6 @@
           
      'unmute': function() {
        $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
-     },
-          
-     'set volume *volnum': function(volnum) {
-       $('#vidFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'setVolume' + '","volume":3}', '*');
-       responsiveVoice.speak("Setting volume.", "US English Female", {pitch: 1});
      },
           
      'ruby the time' : function() {
